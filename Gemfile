@@ -1,4 +1,6 @@
 source :rubygems
 
 gem 'nanoc'
-gem 'adsf'
+gem 'adsf'	# nanoc view
+gem 'fssm'	# nanoc watch
+gem 'haml'
