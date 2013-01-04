@@ -17,15 +17,15 @@
 
   %body
     %a#top-of-page
-    %div#header
+    #header
       -# HEADER
 
-    %div#wrap.clearfix
-      %div.col_12
+    #wrap.clearfix
+      .col_12
         = yield
 
-      %div.clear
-      %div#footer
+      .clear
+      #footer
         -# FOOTER
         Copyright &copy; #{Time.now.year} Example Corporation. 
         %a#link-top{href: '#top-of-page'} Top
