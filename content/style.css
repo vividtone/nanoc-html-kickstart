@@ -61,6 +61,13 @@ border:1px solid #ccc;
 margin:-1px -1px 0 -1px;
 }
 
+#header {
+  margin: 20px auto;
+  position: relative;
+  text-align: center;
+	text-shadow: 0 1px 1px #FFFFFF;
+  width: 960px;
+}
 
 #footer{
 text-align:center;
