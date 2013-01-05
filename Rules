@@ -13,6 +13,13 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+FILTER_MAPS = {
+  'haml' => :haml,
+  'textile' => :redcloth,
+  'md' => :kramdown,
+  'markdown' => :kramdown
+}
+
 compile '/(style|css|js)/*' do
   # don’t filter or layout
 end
@@ -31,7 +38,8 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    filter :haml
+    filter_type = FILTER_MAPS[item[:extension]]
+    filter filter_type if filter_type
     layout 'default'
   end
 end
