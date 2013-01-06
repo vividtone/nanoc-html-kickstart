@@ -21,14 +21,17 @@ FILTER_MAPS = {
 }
 
 compile '/(style|css|js)/*' do
+  filter :sass, syntax: :scss if item[:extension] == 'scss'
   # don’t filter or layout
 end
 
 route '/(style|css|js)/*' do
   basename = item.identifier.chop
-  ext = item[:extension]
-  if ext == 'dummyext'
+  case ext = item[:extension]
+  when 'dummyext'
     basename
+  when 'scss'
+    "#{basename}.css"
   else
     "#{basename}.#{ext}"
   end
